@@ -1,0 +1,450 @@
+
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101827;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background-video {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* DARK OVERLAY */
+
+.background-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(10, 18, 30, 0.65);
+
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* WEBSITE CONTENT */
+
+header,
+nav,
+main,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+/* HEADER */
+
+header {
+    background: #18243a;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+header p {
+    color: #a5b4fc;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    padding: 18px;
+    background: #1e293b;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #818cf8;
+}
+
+
+/* MAIN LAYOUT */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background: rgba(30, 41, 59, 0.65);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 12px;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #c7d2fe;
+}
+
+
+/* GAME GALLERY */
+
+
+/* GAME GALLERY */
+
+.game-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* GAME CARD */
+
+.game-card {
+    margin: 0;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* GAME IMAGE */
+
+.game-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* GAME INFORMATION */
+
+.game-card figcaption {
+    padding: 18px;
+}
+
+.game-card h3 {
+    margin: 0 0 10px;
+    color: #f1f5f9;
+}
+
+.game-card p {
+    margin-bottom: 0;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* GAME GENRE */
+
+.game-genre {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #334155;
+    border-radius: 5px;
+    color: #c7d2fe;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .game-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+/* =========================
+   PLAYTIME TABLE
+========================= */
+
+.playtime-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 35px;
+    color: #e5e7eb;
+}
+
+.playtime-table th,
+.playtime-table td {
+    border: 1px solid #475569;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.playtime-table th {
+    background-color: #111827;
+    color: #c7d2fe;
+    font-weight: bold;
+}
+
+.playtime-table tr:nth-child(even) {
+    background-color: #293548;
+}
+
+.playtime-table tr:hover {
+    background-color: #334155;
+}
+
+/* Right-align the playtime column */
+
+.playtime-table th:last-child,
+.playtime-table td:last-child {
+    text-align: right;
+}
+
+
+/* 
+   CHART CONTAINER
+*/
+
+.chart-container {
+    position: relative;
+
+    width: 100%;
+    height: 350px;
+
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.chart-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .playtime-table {
+        font-size: 13px;
+    }
+
+    .playtime-table th,
+    .playtime-table td {
+        padding: 8px 6px;
+        overflow-wrap: anywhere;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+}
+
+
+
+
+
+/* MOMENTS */
+
+.moment-card {
+    margin-bottom: 25px;
+}
+
+.moment-card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+ .moment-card[hidden] {
+    display: none;
+     }
+
+/* INTERACTIVE AREA */
+
+.interactive-area {
+    margin-top: 30px;
+    padding: 20px;
+    background: #111827;
+    border-radius: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4f46e5;
+}
+
+button:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 3px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .game-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .game-card img {
+        height: auto;
+    }
+
+   
+        
+
+     
+    
+}
+
+
+@media (min-width: 701px) {
+
+    .featured-game {
+        grid-column: 1 / -1;
+        width: min(100%, 500px);
+        justify-self: center;
+                   }
+
+      } 
+
+
+
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .background-video {
+        display: none;
+    }
+
+    body {
+        background: #101827 url("images/background.jpg")
+                    center center / cover fixed;
+    }
+}
+
+
+/* =========================
+   BACKGROUND MUSIC CONTROL
+========================= */
+
+.music-control {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 10;
+
+    padding: 12px 18px;
+
+    background: rgba(25, 40, 60, 0.9);
+    color: white;
+
+    border: 1px solid #64748b;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+}
+
+.music-control:hover {
+    background: rgba(55, 75, 105, 0.95);
+}
+
+.music-control:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+
+    .music-control {
+        right: 12px;
+        bottom: 12px;
+
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+}
